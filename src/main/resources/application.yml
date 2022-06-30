@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: ${DB_POSTGRE_URL}
+    username: ${DB_POSTGRE_USERNAME}
+    password: ${DB_POSTGRE_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+  data:
+    rest:
+      base-path: /api
+      
+---
+spring:
+  config:
+    activate:
+      on-profile: development
+server:
+  port: 8080
+      
